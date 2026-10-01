@@ -53,12 +53,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\BCLExtensions\TargetingPacks\netstandard2.1\analyzers\dotnet\roslyn4.0\cs\System.Text.Json.SourceGeneration.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TutorialInfo\Readme.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\TutorialInfo\StyleSheets\ReadmeEditor.uss" />
-    <None Include="Assets\TutorialInfo\StyleSheets\ReadmeEditorLight.uss" />
-    <None Include="Assets\TutorialInfo\StyleSheets\ReadmeEditorDark.uss" />
+    <Compile Include="Assets\Scripts\PlayerController\s_PlayerCamera.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
