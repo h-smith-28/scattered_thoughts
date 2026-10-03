@@ -1,7 +1,12 @@
+/**
+* Attached to sticky notes to give provided behaviour
+*/
 using UnityEngine;
 
 public class s_StickyNoteController : MonoBehaviour
 {
+    // Collider for the trigger on back of sticky note
+    // Will face into the wall and tell sticky note when it is "stuck" to something
     [SerializeField]
     private Collider stickyCollider;
 

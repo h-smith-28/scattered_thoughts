@@ -1,3 +1,7 @@
+/**
+* Handles all the camera movement for the player
+* Also handles the raycasts for interacting with objects, as camera is the center for all raycasts
+*/
 using UnityEngine.InputSystem;
 using UnityEngine;
 
