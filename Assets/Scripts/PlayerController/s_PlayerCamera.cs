@@ -1,3 +1,7 @@
+/**
+* Handles all the camera movement for the player
+* Also handles the raycasts for interacting with objects, as camera is the center for all raycasts
+*/
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -5,6 +9,8 @@ public class s_PlayerCamera : MonoBehaviour
 {
     [SerializeField]
     private float cameraSens = 0.2f;
+    [SerializeField]
+    private float interactRange = 2.5f;
     private float cameraConstraint = 90.0f;
     private Camera mainCamera;
     private float lookAngle = 0.0f;
@@ -25,6 +31,21 @@ public class s_PlayerCamera : MonoBehaviour
         if(!InputSystem.actions.FindAction("Secondary").IsPressed())
             HandleCamera(mouseDelta);
         HandleObjectInteraction(mouseDelta);
+        HandleStationInteraction();
+    }
+
+    private void HandleStationInteraction()
+    {
+        if (!Keyboard.current.eKey.wasPressedThisFrame || holdingObj)
+            return;
+
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
+        {
+            s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
+            if (station != null)
+                station.Use(gameObject);
+        }
     }
 
     private void HandleCamera(Vector2 mouseDelta)

@@ -1,10 +1,18 @@
+/**
+* Handles all physical movement of the character
+* All movement is handled through the CharacterController component
+* Does not work under Rigidbody, will not be effected by physics forces
+* Anything that moves the player from point A to B, including effects under gravity
+*/
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class s_PlayerMovement : MonoBehaviour
 {
+    // Movement speed of player
     [SerializeField]
     private float moveSpeed = 5.5f;
+    // Forced gravity modifier, necessary as object doesn't move with physics forces
     [SerializeField]
     private float gravity = 20.0f;
     private CharacterController controller;

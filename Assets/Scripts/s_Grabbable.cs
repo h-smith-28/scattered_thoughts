@@ -1,13 +1,22 @@
+/**
+* Attached to any object that the player can grab and throw
+* Needs to be assigned to an object with collisions and Rigidbody to work as intended
+*/
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class s_Grabbable : MonoBehaviour
 {
+    // How far away the object will be from the player when held
+    // Needs to be large enough so that with any rotation there won't be clipping
     [SerializeField]
     private float lookDistance = 10.0f;
+    // How much force is used to throw the object
     [SerializeField]
     private float throwForce = 5.0f;
 
+    // The 3D collider on the object
     [SerializeField]
     private Collider collider;
     private Rigidbody rb;

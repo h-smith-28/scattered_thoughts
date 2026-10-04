@@ -43,7 +43,7 @@
     <UnityVersion>6000.6.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\hasth\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\jbert\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.3.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -55,7 +55,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\s_Grabbable.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerCamera.cs" />
+    <Compile Include="Assets\Scripts\s_QuitGame.cs" />
     <Compile Include="Assets\Scripts\s_StickyNoteController.cs" />
+    <Compile Include="Assets\Scripts\s_ComputerStation.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
