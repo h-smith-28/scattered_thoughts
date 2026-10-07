@@ -31,7 +31,7 @@ public class s_StickyNoteController : MonoBehaviour
         {
             Debug.Log("Unsticking");
             rb.constraints = RigidbodyConstraints.None;
-            rb.useGravity = true;
+            //rb.useGravity = true;
         }
     }
 }
