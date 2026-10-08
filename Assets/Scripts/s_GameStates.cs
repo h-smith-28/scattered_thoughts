@@ -3,6 +3,12 @@ using UnityEngine;
 public class s_GameStates : MonoBehaviour
 {
     public float stressLevel = 0.0f;
+    s_GameMenus gameMenus;
+
+    void Start()
+    {
+        gameMenus = FindAnyObjectByType<s_GameMenus>();
+    }
 
     void Update()
     {
@@ -15,6 +21,6 @@ public class s_GameStates : MonoBehaviour
 
     void EndGameState()
     {
-        Debug.Log("Unimplemented: end of game");
+        gameMenus?.ShowLose();
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class s_ComputerStation : MonoBehaviour
 {
-    public Transform seatPoint;
-    public CanvasGroup screen;
+    public Transform seatPoint;   // where the camera goes when seated
+    public CanvasGroup screen;    // the monitor's UI
     public float blendTime = 0.6f;
 
     s_PlayerMovement playerMovement;
@@ -15,6 +15,7 @@ public class s_ComputerStation : MonoBehaviour
     Vector3 savedLocalPos;
     Quaternion savedLocalRot;
     bool inUse, moving;
+    public bool IsBusy => inUse || moving;
 
     void Start() => SetScreenInteractive(false);
 
@@ -52,6 +53,7 @@ public class s_ComputerStation : MonoBehaviour
             parent.rotation * savedLocalRot,
             () => SetPlayerControls(true)));
     }
+
 
     void SetPlayerControls(bool on)
     {
