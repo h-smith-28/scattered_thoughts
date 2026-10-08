@@ -8,6 +8,7 @@ public class s_GameMenus : MonoBehaviour
     public GameObject losePanel;
     public GameObject winPanel;
     s_ComputerStation[] stations;
+    s_PlayerCamera playerCamera;
 
     bool isPaused;
     bool gameOver;
@@ -15,6 +16,7 @@ public class s_GameMenus : MonoBehaviour
     void Start()
     {
         stations = FindObjectsByType<s_ComputerStation>();
+        playerCamera = FindAnyObjectByType<s_PlayerCamera>();
     }   
 
     void Update()
@@ -49,6 +51,8 @@ public class s_GameMenus : MonoBehaviour
         Time.timeScale = on ? 0f : 1f;
         Cursor.lockState = on ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = on;
+        if (playerCamera != null)
+            playerCamera.enabled = !on;
     }
     
     public void ShowLose() => EndGame(losePanel);
