@@ -13,7 +13,7 @@ public class s_GameStates : MonoBehaviour
     void Update()
     {
         stressLevel += Time.deltaTime;
-        if(stressLevel >= 10)
+        if(stressLevel >= 60)
         {
             EndGameState();
         }
