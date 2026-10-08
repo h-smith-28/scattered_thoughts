@@ -10,6 +10,12 @@ public class AccountManager : MonoBehaviour
     public TMP_InputField passwordLoginInput;
     public GameObject successScreen;
     public GameObject errorMessage;
+    public s_GameMenus gameMenus;
+
+    private void Start()
+    {
+        gameMenus = FindAnyObjectByType<s_GameMenus>();
+    }
 
     public void CreateAccount()
     {
@@ -38,6 +44,13 @@ public class AccountManager : MonoBehaviour
         else
         {
             errorMessage.SetActive(true);
+        }
+    }
+
+    public void Update()
+    {
+        if (passwordLoginInput.text.Equals("SeCr3t_w0rd5!")){
+            gameMenus?.ShowWin();
         }
     }
 }

@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class s_GameStates : MonoBehaviour
 {
     public float stressLevel = 0.0f;
     s_GameMenus gameMenus;
+    public Text stressNum;
 
     void Start()
     {
@@ -13,7 +15,8 @@ public class s_GameStates : MonoBehaviour
     void Update()
     {
         stressLevel += Time.deltaTime;
-        if(stressLevel >= 10)
+        stressNum.text = Mathf.Round(stressLevel).ToString();
+        if (stressLevel >= 60)
         {
             EndGameState();
         }
