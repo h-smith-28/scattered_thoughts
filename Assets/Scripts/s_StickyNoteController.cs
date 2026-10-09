@@ -17,7 +17,7 @@ public class s_StickyNoteController : MonoBehaviour
     {
         if (other.tag != "Player")
         {
-            Debug.Log("sticking");
+            //Debug.Log("sticking");
             rb.useGravity = false;
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -29,7 +29,7 @@ public class s_StickyNoteController : MonoBehaviour
     {
         if(other.tag != "Player")
         {
-            Debug.Log("Unsticking");
+            //Debug.Log("Unsticking");
             rb.constraints = RigidbodyConstraints.None;
             //rb.useGravity = true;
         }

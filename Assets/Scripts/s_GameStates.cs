@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class s_GameStates : MonoBehaviour
 {
     public float stressLevel = 0.0f;
     s_GameMenus gameMenus;
-    public Text stressNum;
+    public TMP_Text stressNum;
 
     void Start()
     {

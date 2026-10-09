@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class s_ComputerStation : MonoBehaviour
 {
     public Transform seatPoint;   // where the camera goes when seated
     public CanvasGroup screen;    // the monitor's UI
     public float blendTime = 0.6f;
+    public Image crosshairRef;
+    public Material pixelShader;
 
     s_PlayerMovement playerMovement;
     s_PlayerCamera playerCamera;
@@ -30,9 +33,12 @@ public class s_ComputerStation : MonoBehaviour
 
         savedLocalPos = cam.localPosition;
         savedLocalRot = cam.localRotation;
+        pixelShader.SetVector("_PixelResolution", new Vector2(1600,900));
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        crosshairRef.enabled = false;
+
 
         StartCoroutine(MoveCamera(seatPoint.position, seatPoint.rotation,
             () => SetScreenInteractive(true)));
@@ -49,6 +55,12 @@ public class s_ComputerStation : MonoBehaviour
         inUse = false;
         SetScreenInteractive(false);
         Transform parent = cam.parent;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        crosshairRef.enabled = true;
+        pixelShader.SetVector("_PixelResolution", new Vector2(800,450));
+
         StartCoroutine(MoveCamera(parent.TransformPoint(savedLocalPos),
             parent.rotation * savedLocalRot,
             () => SetPlayerControls(true)));

@@ -30,27 +30,14 @@ public class AccountManager : MonoBehaviour
 
     public void Login()
     {
-        string username = usernameLoginInput.text;
-        string password = passwordLoginInput.text;
-
-        string savedUsername = PlayerPrefs.GetString("SavedUsername", "");
-        string savedPassword = PlayerPrefs.GetString("SavedPassword", "");
-
-        if (username == savedUsername && password == savedPassword)
+        if (passwordLoginInput.text.Equals("SeCr3t_w0rd5!"))
         {
-            successScreen.SetActive(true);
+            gameMenus?.ShowWin();
             errorMessage.SetActive(false);
         }
         else
         {
             errorMessage.SetActive(true);
-        }
-    }
-
-    public void Update()
-    {
-        if (passwordLoginInput.text.Equals("SeCr3t_w0rd5!")){
-            gameMenus?.ShowWin();
         }
     }
 }

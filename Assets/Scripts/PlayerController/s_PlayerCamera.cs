@@ -70,7 +70,7 @@ public class s_PlayerCamera : MonoBehaviour
                 {
                     if(hit.collider.gameObject.TryGetComponent(out s_Grabbable grabbedObj))
                     {
-                        Debug.Log("Interacted with: " + hit.collider.gameObject.name);
+                        //Debug.Log("Interacted with: " + hit.collider.gameObject.name);
                         currentHeldObj = hit.collider.gameObject;
                         grabbedObj.Grab(gameObject);
                         holdingObj = true;
@@ -86,7 +86,7 @@ public class s_PlayerCamera : MonoBehaviour
                         currentHeldObj.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
                         currentHeldObj.transform.position = hit.point;
                         currentHeldObj.GetComponent<s_Grabbable>().Drop(false);
-                        Debug.Log("Sticking to: " + hit.collider.gameObject.name);
+                        //Debug.Log("Sticking to: " + hit.collider.gameObject.name);
                         holdingObj = false;
                     }
                 }
