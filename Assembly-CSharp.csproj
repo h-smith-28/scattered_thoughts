@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\s_GameMenus.cs" />
     <Compile Include="Assets\Scripts\s_GameStates.cs" />
+    <Compile Include="Assets\Visual Effects\Dissolve\DissolveLoop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

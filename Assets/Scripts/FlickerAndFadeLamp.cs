@@ -16,13 +16,11 @@ public class FlickerAndFadeLamp : MonoBehaviour
     {
         if (pointLight == null)
             return;
-
-        // t = 0 means darkest
-        // t = 1 means brightest
+ 
         float t =
             (Mathf.Sin(Time.time * Mathf.PI * 2f / breathingDuration) + 1f) / 2f;
 
-        // Smoothly change the light intensity between minimum and maximum
+ 
         pointLight.intensity =
             Mathf.Lerp(minIntensity, maxIntensity, t);
     }
