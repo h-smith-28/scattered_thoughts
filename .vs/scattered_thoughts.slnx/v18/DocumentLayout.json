@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\x3514\\onedrive\\\u6587\u6863\\github\\scattered_thoughts\\assets\\visual effects\\dissolve\\dissolveloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\visual effects\\dissolve\\dissolveloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +24,9 @@
               "RelativeDocumentMoniker": "Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
               "ToolTip": "C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
               "RelativeToolTip": "Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwEkAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T23:35:32.847Z",
+              "WhenOpened": "2026-10-10T02:17:07.346Z",
               "EditorCaption": ""
             }
           ]
