@@ -33,3 +33,5 @@ crashlytics-build.properties
 .DS_Store
 Thumbs.db
 Assembly-CSharp.csproj
+Assembly-CSharp.csproj
+*.csproj
