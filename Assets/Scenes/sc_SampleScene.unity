@@ -430,12 +430,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b555e1639e5d3274793da25fc9c594c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
-  targetRenderer: {fileID: 0}
+  targetRenderer: {fileID: 624672692}
   maxDissolve: 1
-  normalHoldTime: 3
-  dissolveDuration: 20
-  disappearedHoldTime: 5
-  restoreDuration: 20
+  normalHoldTime: 2
+  dissolveDuration: 5
+  disappearedHoldTime: 2
+  restoreDuration: 5
+--- !u!23 &624672692 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5292699498145830337, guid: 5d0ac795edb487b4ebf4d6ac771b2d89, type: 3}
+  m_PrefabInstance: {fileID: 1615305234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &651115540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,12 +1241,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b555e1639e5d3274793da25fc9c594c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
-  targetRenderer: {fileID: 0}
+  targetRenderer: {fileID: 1520094420}
   maxDissolve: 1
-  normalHoldTime: 0
-  dissolveDuration: 1
-  disappearedHoldTime: 0
-  restoreDuration: 1
+  normalHoldTime: 4
+  dissolveDuration: 4
+  disappearedHoldTime: 2
+  restoreDuration: 4
+--- !u!23 &1520094420 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2402177565125382351, guid: efc728829803fda43aec44426886fe50, type: 3}
+  m_PrefabInstance: {fileID: 1887753794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1600766870
 PrefabInstance:
   m_ObjectHideFlags: 0
