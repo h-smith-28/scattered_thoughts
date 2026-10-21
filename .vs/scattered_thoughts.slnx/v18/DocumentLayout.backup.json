@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\",
+  "WorkspaceRootPath": "C:\\Users\\chris\\OneDrive\\Desktop\\Unity\\scattered_thoughts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\x3514\\onedrive\\\u6587\u6863\\github\\scattered_thoughts\\assets\\visual effects\\dissolve\\dissolveloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\visual effects\\dissolve\\dissolveloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\chris\\onedrive\\desktop\\unity\\scattered_thoughts\\assets\\scripts\\s_gameclockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\s_gameclockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DissolveLoop.cs",
-              "DocumentMoniker": "C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
-              "RelativeDocumentMoniker": "Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
-              "ToolTip": "C:\\Users\\x3514\\OneDrive\\\u6587\u6863\\GitHub\\scattered_thoughts\\Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
-              "RelativeToolTip": "Assets\\Visual Effects\\Dissolve\\DissolveLoop.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwEkAAAALAAAAAAAAAA==",
+              "Title": "s_GameClockController.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\OneDrive\\Desktop\\Unity\\scattered_thoughts\\Assets\\Scripts\\s_GameClockController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\s_GameClockController.cs",
+              "ToolTip": "C:\\Users\\chris\\OneDrive\\Desktop\\Unity\\scattered_thoughts\\Assets\\Scripts\\s_GameClockController.cs*",
+              "RelativeToolTip": "Assets\\Scripts\\s_GameClockController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T23:35:32.847Z",
+              "WhenOpened": "2026-10-21T18:41:07.054Z",
               "EditorCaption": ""
             }
           ]
