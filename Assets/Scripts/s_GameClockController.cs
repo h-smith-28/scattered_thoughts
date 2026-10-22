@@ -3,9 +3,10 @@ using TMPro;
 
 public class GameClockController : MonoBehaviour
 {
+    private float elapsedTime;
+
     [Header("ClockUI")]
     [SerializeField] private TMP_Text clockText;
-    private float elapsedTime;
     [SerializeField] private float timeScale = 144f; //This approximatley makes 12 hours pass in 5 minutes
     [SerializeField] private float timeInADay = 86400f; //This is 24 hours in seconds
     [SerializeField] private float startingHour = 8f; //This is the hour of the day you start in, using numbers higher than 12 for PM
@@ -46,7 +47,7 @@ public class GameClockController : MonoBehaviour
         clockText.text = clockString;
     }
 
-    void StartDay()
+    public void StartDay()
     {
         elapsedTime = startingHour * 3600f;
     }
