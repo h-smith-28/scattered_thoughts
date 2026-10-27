@@ -1,12 +1,12 @@
+
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class s_GameStates : MonoBehaviour
 {
     public float stressLevel = 0.0f;
     s_GameMenus gameMenus;
-    public TMP_Text stressNum;
+    public Text stressNum;
 
     void Start()
     {
@@ -16,7 +16,12 @@ public class s_GameStates : MonoBehaviour
     void Update()
     {
         stressLevel += Time.deltaTime;
-        stressNum.text = Mathf.Round(stressLevel).ToString();
+
+        if (stressNum != null)
+        {
+            stressNum.text = Mathf.Round(stressLevel).ToString();
+        }
+
         if (stressLevel >= 60)
         {
             EndGameState();
