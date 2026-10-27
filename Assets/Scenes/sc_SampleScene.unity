@@ -614,10 +614,10 @@ MonoBehaviour:
   closedSeconds: 0.9
   openSeconds: 0.9
   pauseMenuRoot: {fileID: 0}
-  loopRedness: 0.033
-  redFadeInSeconds: 0.087
+  loopRedness: 0.127
+  redFadeInSeconds: 0.162
   redFadeOutSeconds: 2
-  loopBlurPixels: 0.68
+  loopBlurPixels: 1.73
   blurFadeInSeconds: 0.25
   blurFadeOutSeconds: 0.35
   loopRecoverySeconds: 1.5
