@@ -511,10 +511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
   targetRenderer: {fileID: 0}
   maxDissolve: 1
-  normalHoldTime: 7
-  dissolveDuration: 14
+  normalHoldTime: 14
+  dissolveDuration: 7
   disappearedHoldTime: 5
-  restoreDuration: 14
+  restoreDuration: 6
 --- !u!1 &651115540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,10 +1381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
   targetRenderer: {fileID: 0}
   maxDissolve: 1
-  normalHoldTime: 2
-  dissolveDuration: 10
-  disappearedHoldTime: 4
-  restoreDuration: 10
+  normalHoldTime: 10
+  dissolveDuration: 9
+  disappearedHoldTime: 6
+  restoreDuration: 5
 --- !u!1001 &1600766870
 PrefabInstance:
   m_ObjectHideFlags: 0
