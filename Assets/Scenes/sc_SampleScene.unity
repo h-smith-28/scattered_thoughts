@@ -511,10 +511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
   targetRenderer: {fileID: 0}
   maxDissolve: 1
-  normalHoldTime: 3
-  dissolveDuration: 20
+  normalHoldTime: 7
+  dissolveDuration: 14
   disappearedHoldTime: 5
-  restoreDuration: 20
+  restoreDuration: 14
 --- !u!1 &651115540
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +562,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   stressLevel: 0
   stressNum: {fileID: 363577290}
+--- !u!1 &772782443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772782445}
+  - component: {fileID: 772782446}
+  m_Layer: 0
+  m_Name: EyeVisionFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &772782445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772782443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 2.4134, z: -0.92705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772782446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772782443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6006adfa9d775c94681b8ff0326a4af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EyeVisionFXController
+  automaticCycle: 1
+  automaticEffect: 1
+  firstTriggerDelaySeconds: 5
+  repeatIntervalSeconds: 12
+  closeSeconds: 0.9
+  closedSeconds: 0.9
+  openSeconds: 0.9
+  pauseMenuRoot: {fileID: 0}
+  loopRedness: 0.033
+  redFadeInSeconds: 0.087
+  redFadeOutSeconds: 2
+  loopBlurPixels: 0.68
+  blurFadeInSeconds: 0.25
+  blurFadeOutSeconds: 0.35
+  loopRecoverySeconds: 1.5
+  damageRedness: 1
+  damageBlurPixels: 15
+  wakeBlurPixels: 15
+  wakeBlackHoldSeconds: 15
+  blackoutHoldSeconds: 15
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,10 +1381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DissolveLoop
   targetRenderer: {fileID: 0}
   maxDissolve: 1
-  normalHoldTime: 0
-  dissolveDuration: 1
-  disappearedHoldTime: 0
-  restoreDuration: 1
+  normalHoldTime: 2
+  dissolveDuration: 10
+  disappearedHoldTime: 4
+  restoreDuration: 10
 --- !u!1001 &1600766870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1593,6 +1657,10 @@ PrefabInstance:
     - target: {fileID: 5269705869363660132, guid: 5d0ac795edb487b4ebf4d6ac771b2d89, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292699498145830337, guid: 5d0ac795edb487b4ebf4d6ac771b2d89, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5292699498145830337, guid: 5d0ac795edb487b4ebf4d6ac771b2d89, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2511,3 +2579,4 @@ SceneRoots:
   - {fileID: 1150436166}
   - {fileID: 435377809}
   - {fileID: 1507049623}
+  - {fileID: 772782445}
