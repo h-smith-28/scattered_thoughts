@@ -53,6 +53,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Data\BCLExtensions\TargetingPacks\netstandard2.1\analyzers\dotnet\roslyn4.0\cs\System.Text.Json.SourceGeneration.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Minigames\s_RhythmMinigame.cs" />
     <Compile Include="Assets\Scripts\s_Grabbable.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerCamera.cs" />
     <Compile Include="Assets\acctmanager.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Assets\Scripts\Minigames\s_RotationMinigame.cs" />
     <Compile Include="Assets\Scripts\s_GameStates.cs" />
     <Compile Include="Assets\Visual Effects\Dissolve\DissolveLoop.cs" />
+    <Compile Include="Assets\Scripts\Minigames\s_RhythmArrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

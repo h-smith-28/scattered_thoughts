@@ -106,7 +106,11 @@ public class s_MinigameObject : MonoBehaviour
     void PlayGame(bool on)
     {
         s_RotationMinigame rotateGame = gameObject.GetComponent<s_RotationMinigame>();
-        if(rotateGame)
+        if(rotateGame && rotateGame.isActiveAndEnabled)
             rotateGame.StartGame(this);
+
+        s_RhythmMinigame rhythmGame = gameObject.GetComponent<s_RhythmMinigame>();
+        if(rhythmGame && rhythmGame.isActiveAndEnabled)
+            rhythmGame.StartGame(this);
     }
 }
