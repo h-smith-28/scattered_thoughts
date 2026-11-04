@@ -19,6 +19,7 @@ public class s_ComputerStation : MonoBehaviour
     Quaternion savedLocalRot;
     bool inUse, moving;
     public bool IsBusy => inUse || moving;
+    public bool IsSeated => inUse && !moving;
 
     void Start() => SetScreenInteractive(false);
 

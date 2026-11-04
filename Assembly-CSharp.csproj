@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\s_ComputerStation.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\s_GameMenus.cs" />
+    <Compile Include="Assets\Scripts\s_CursorManager.cs" />
     <Compile Include="Assets\Scripts\s_GameStates.cs" />
     <Compile Include="Assets\Visual Effects\Dissolve\DissolveLoop.cs" />
   </ItemGroup>
