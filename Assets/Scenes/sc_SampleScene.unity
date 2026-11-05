@@ -119,6 +119,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3580096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3580097}
+  - component: {fileID: 3580098}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3580097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580096}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3580098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13defdafd2f1e641948d7fc4f4c0bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::s_CursorManager
+  blockedCursor: {fileID: 2800000, guid: c08143c3792a6b4449bfd16e3cdc91c7, type: 3}
+  station: {fileID: 1887753795}
 --- !u!1 &99794967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2282,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1520094417}
   m_SourcePrefab: {fileID: 100100000, guid: efc728829803fda43aec44426886fe50, type: 3}
+--- !u!114 &1887753795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5420136478924690859, guid: efc728829803fda43aec44426886fe50, type: 3}
+  m_PrefabInstance: {fileID: 1887753794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799874a64523ac041a457c0643b1e72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::s_ComputerStation
 --- !u!4 &1981917507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6468661722632404274, guid: efc728829803fda43aec44426886fe50, type: 3}
@@ -2821,6 +2878,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 832575519}
+  - {fileID: 3580097}
   - {fileID: 1088655668}
   - {fileID: 1887753794}
   - {fileID: 1615305234}
