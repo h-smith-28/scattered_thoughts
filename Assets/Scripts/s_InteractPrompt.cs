@@ -18,6 +18,13 @@ public class s_InteractPrompt : MonoBehaviour
             return false;
 
         s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
-        return station != null && !station.IsBusy;
+        if(station != null && !station.IsBusy)
+            return true;
+
+        s_MinigameObject minigameStation = hit.collider.GetComponentInParent<s_MinigameObject>();
+        if(minigameStation != null && !minigameStation.IsBusy)
+            return true;
+        
+        return false;
     }
 }
