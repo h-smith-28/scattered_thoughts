@@ -11,6 +11,7 @@ public class s_MinigameObject : MonoBehaviour
     public float blendTime = 0.6f;
     public Image crosshairRef;
     public Material pixelShader;
+    public float rotationOffset = 0.0f;
 
     s_PlayerMovement playerMovement;
     s_PlayerCamera playerCamera;
@@ -48,7 +49,7 @@ public class s_MinigameObject : MonoBehaviour
         crosshairRef.enabled = false;
 
 
-        StartCoroutine(MoveCamera(viewPoint.position, viewPoint.rotation,
+        StartCoroutine(MoveCamera(viewPoint.position, viewPoint.rotation * Quaternion.Euler(0f, rotationOffset, 0f),
             () =>PlayGame(true)));
     }
 

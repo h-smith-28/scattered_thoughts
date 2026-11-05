@@ -23,6 +23,8 @@ public class s_RotationMinigame : MonoBehaviour
     public GameObject canvas;
     private Transform successZone;
     private Transform needle;
+    public float stressGainedOnFail = 10f;
+    public float stressLostOnSuccess = 10f;
 
     private float successPoint;
 
@@ -80,10 +82,11 @@ public class s_RotationMinigame : MonoBehaviour
         {
             //tbd
             Debug.Log("Succeeded rotation qte");
+            FindAnyObjectByType<s_GameStates>().AdjustStress(-stressLostOnSuccess);
         }
         else
         {
-            //tbd
+            FindAnyObjectByType<s_GameStates>().AdjustStress(stressGainedOnFail);
             Debug.Log("Failed rotation qte");
         }
         canvas.SetActive(false);

@@ -22,7 +22,7 @@ public class s_GameStates : MonoBehaviour
             stressNum.text = Mathf.Round(stressLevel).ToString();
         }
 
-        if (stressLevel >= 60)
+        if (stressLevel >= 80)
         {
             EndGameState();
         }
@@ -31,5 +31,12 @@ public class s_GameStates : MonoBehaviour
     void EndGameState()
     {
         gameMenus?.ShowLose();
+    }
+
+    public void AdjustStress(float stressGain)
+    {
+        stressLevel += stressGain;
+        if(stressLevel <= 0)
+            stressLevel = 0.0f;
     }
 }

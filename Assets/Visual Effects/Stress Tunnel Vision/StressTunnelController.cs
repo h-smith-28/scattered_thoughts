@@ -7,8 +7,8 @@ public class StressTunnelController : MonoBehaviour
     public s_GameStates gameStates;
 
     [Header("Stress Range")]
-    public float startStress = 6f;
-    public float maxStress = 50f;
+    public float startStress = 15f;
+    public float maxStress = 80f;
 
     [Header("Vision Radius")]
     public float maxRadius = 0.71f;

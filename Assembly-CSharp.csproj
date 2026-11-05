@@ -54,29 +54,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\s_InteractPrompt.cs" />
-    <Compile Include="Assets\Visual Effects\Stress Tunnel Vision\StressTunnelController.cs" />
     <Compile Include="Assets\Scripts\Minigames\s_RhythmMinigame.cs" />
+    <Compile Include="Assets\Visual Effects\Stress Tunnel Vision\StressTunnelController.cs" />
     <Compile Include="Assets\Scripts\s_Grabbable.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerCamera.cs" />
     <Compile Include="Assets\acctmanager.cs" />
     <Compile Include="Assets\Scripts\s_QuitGame.cs" />
     <Compile Include="Assets\Scripts\s_StickyNoteController.cs" />
-    <Compile Include="Assets\Scripts\s_ComputerStation.cs" />
-    <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\s_GameMenus.cs" />
-    <Compile Include="Assets\Scripts\s_CursorManager.cs" />
-    <Compile Include="Assets\Scripts\s_GameStates.cs" />
-    <Compile Include="Assets\Visual Effects\Dissolve\DissolveLoop.cs" />
-    <Compile Include="Assets\Visual Effects\EyeVisionFX\Scripts\EyeVisionFXController.cs" />
     <Compile Include="Assets\Scripts\s_MinigameObject.cs" />
-    <Compile Include="Assets\Scripts\FlickerAndFadeLamp.cs" />
     <Compile Include="Assets\Scripts\s_ComputerStation.cs" />
     <Compile Include="Assets\Scripts\PlayerController\s_PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\s_GameMenus.cs" />
     <Compile Include="Assets\Scripts\Minigames\s_RotationMinigame.cs" />
+    <Compile Include="Assets\Scripts\s_CursorManager.cs" />
     <Compile Include="Assets\Scripts\s_GameStates.cs" />
     <Compile Include="Assets\Visual Effects\Dissolve\DissolveLoop.cs" />
     <Compile Include="Assets\Scripts\Minigames\s_RhythmArrow.cs" />
+    <Compile Include="Assets\Visual Effects\EyeVisionFX\Scripts\EyeVisionFXController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

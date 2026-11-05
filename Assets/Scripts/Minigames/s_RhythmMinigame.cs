@@ -21,6 +21,8 @@ public class s_RhythmMinigame : MonoBehaviour
 
     [Header("Gameplay")]
     public int requiredSuccesses = 10;
+    public float stressGainedOnFail = 10f;
+    public float stressLostOnSuccess = 10f;
 
     private List<s_RhythmArrow> activeArrows =
         new List<s_RhythmArrow>();
@@ -196,9 +198,11 @@ public class s_RhythmMinigame : MonoBehaviour
         if (success)
         {
             Debug.Log("Succeeded rhythm minigame");
+            FindFirstObjectByType<s_GameStates>().AdjustStress(-stressLostOnSuccess);
         }
         else
         {
+            FindFirstObjectByType<s_GameStates>().AdjustStress(stressGainedOnFail);
             Debug.Log("Failed rhythm minigame");
         }
 
