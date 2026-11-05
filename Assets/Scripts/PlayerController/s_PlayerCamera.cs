@@ -45,6 +45,10 @@ public class s_PlayerCamera : MonoBehaviour
             s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
             if (station != null)
                 station.Use(gameObject);
+            
+            s_MinigameObject obj = hit.collider.GetComponentInParent<s_MinigameObject>();
+            if (obj != null)
+                obj.Use(gameObject);
         }
     }
 
