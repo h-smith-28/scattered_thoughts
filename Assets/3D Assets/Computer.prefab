@@ -50,6 +50,8 @@ MonoBehaviour:
   seatPoint: {fileID: 220569737618504252}
   screen: {fileID: 2833850543431838676}
   blendTime: 0.6
+  crosshairRef: {fileID: 0}
+  pixelShader: {fileID: 2100000, guid: 2d221d379406c914f87fcf5b6432e4d8, type: 2}
 --- !u!1 &325245551401359070
 GameObject:
   m_ObjectHideFlags: 0
