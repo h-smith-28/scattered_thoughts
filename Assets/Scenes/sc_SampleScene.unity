@@ -1280,7 +1280,7 @@ MonoBehaviour:
   successCountNeeded: 5
   canvas: {fileID: 375247230}
   stressGainedOnFail: 10
-  stressLostOnSuccess: 10
+  stressLostOnSuccess: 40
 --- !u!114 &478015337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   hitWindow: 0.2
   requiredSuccesses: 5
   stressGainedOnFail: 20
-  stressLostOnSuccess: 20
+  stressLostOnSuccess: 80
   canvas: {fileID: 986443711}
 --- !u!114 &1046824855
 MonoBehaviour:
