@@ -37,6 +37,7 @@ public class s_RhythmMinigame : MonoBehaviour
     public GameObject canvas;
 
     public static s_RhythmMinigame Instance;
+    public AudioSource pillsSFX;
 
     private void Awake()
     {
@@ -170,6 +171,7 @@ public class s_RhythmMinigame : MonoBehaviour
             successes++;
 
             Debug.Log("Successful rhythm hit: " + successes);
+            pillsSFX.Play();
 
             if (successes >= requiredSuccesses)
             {

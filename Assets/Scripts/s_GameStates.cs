@@ -7,6 +7,7 @@ public class s_GameStates : MonoBehaviour
     public float stressLevel = 0.0f;
     s_GameMenus gameMenus;
     public Text stressNum;
+    public AudioSource heartbeatSFX;
 
     void Start()
     {
@@ -25,6 +26,11 @@ public class s_GameStates : MonoBehaviour
         if (stressLevel >= 80)
         {
             EndGameState();
+        }
+
+        if(stressLevel >= 60)
+        {
+            heartbeatSFX.Play();
         }
     }
 

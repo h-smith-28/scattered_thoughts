@@ -25,6 +25,7 @@ public class s_RotationMinigame : MonoBehaviour
     private Transform needle;
     public float stressGainedOnFail = 10f;
     public float stressLostOnSuccess = 10f;
+    public AudioSource microwaveSFX;
 
     private float successPoint;
 
@@ -43,6 +44,7 @@ public class s_RotationMinigame : MonoBehaviour
 
         currentSuccesses = 0;
         gameStarted = true;
+        microwaveSFX.Play();
     }
 
     private void Update()
@@ -65,6 +67,7 @@ public class s_RotationMinigame : MonoBehaviour
                     if (currentSuccesses >= successCountNeeded)
                     {
                         EndGame(true);
+                        
                     }
                 }else{
                     EndGame(false);
@@ -89,6 +92,7 @@ public class s_RotationMinigame : MonoBehaviour
             FindAnyObjectByType<s_GameStates>().AdjustStress(stressGainedOnFail);
             Debug.Log("Failed rotation qte");
         }
+        microwaveSFX.Stop();
         canvas.SetActive(false);
         owner.Exit();
         gameStarted = false;
