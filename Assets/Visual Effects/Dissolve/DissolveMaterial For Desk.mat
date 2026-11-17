@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 0.488
+    - _DissolveAmount: 0
     - _NoiseScale: 5
     - _QueueControl: 0
     - _QueueOffset: 0

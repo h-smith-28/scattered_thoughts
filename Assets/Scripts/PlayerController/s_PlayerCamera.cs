@@ -17,16 +17,25 @@ public class s_PlayerCamera : MonoBehaviour
 
     private bool holdingObj = false;
     private GameObject currentHeldObj;
+    [Header("Interaction Feedback / 交互提示")]
+    [Tooltip("Shader Graph material for the outline. Edit its Color and Outline Width in the Material Inspector.")]
+    [SerializeField] private Material outlineMaterial;
+    [Tooltip("Shader Graph material for the sticky note footprint. Edit its color and opacity in the Material Inspector.")]
+    [SerializeField] private Material placementPreviewMaterial;
+    private s_InteractionFeedback interactionFeedback;
 
     private void Start()
     {
         mainCamera = GetComponentInChildren<Camera>();
+        InitializeFeedback();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     private void Update()
     {
+        if (!mainCamera) InitializeFeedback();
+        if (!mainCamera) return;
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
         if(!InputSystem.actions.FindAction("Secondary").IsPressed())
             HandleCamera(mouseDelta);
@@ -34,20 +43,62 @@ public class s_PlayerCamera : MonoBehaviour
         HandleStationInteraction();
     }
 
+    private void LateUpdate()
+    {
+        // Also recover after script reloads when Enter Play Mode skips scene reload.
+        if (interactionFeedback == null) InitializeFeedback();
+        if (interactionFeedback == null || Time.timeScale <= 0f) return;
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+        if (holdingObj)
+        {
+            if (currentHeldObj && currentHeldObj.GetComponent<s_StickyNoteController>())
+                interactionFeedback.DrawPlacement(ray, currentHeldObj);
+            else
+                interactionFeedback.DrawFocus(null);
+            return;
+        }
+
+        Transform target = null;
+        if (Physics.Raycast(ray, out RaycastHit hit, 50f, ~0, QueryTriggerInteraction.Ignore))
+        {
+            s_Grabbable grabbable = hit.collider.GetComponentInParent<s_Grabbable>();
+            s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
+            s_MinigameObject minigame = hit.collider.GetComponentInParent<s_MinigameObject>();
+            if (grabbable && grabbable.isActiveAndEnabled)
+                target = grabbable.transform;
+            else if (hit.distance <= interactRange)
+            {
+                if (station && station.isActiveAndEnabled && !station.IsBusy) target = station.transform;
+                else if (minigame && minigame.isActiveAndEnabled && !minigame.IsBusy) target = minigame.transform;
+            }
+        }
+        interactionFeedback.DrawFocus(target);
+    }
+
+    private void InitializeFeedback()
+    {
+        if (!mainCamera) mainCamera = GetComponentInChildren<Camera>();
+        if (mainCamera && interactionFeedback == null)
+            interactionFeedback = new s_InteractionFeedback(mainCamera, outlineMaterial, placementPreviewMaterial);
+    }
+
+    private void OnDisable() => interactionFeedback?.DrawFocus(null);
+    private void OnDestroy() => interactionFeedback?.Dispose();
+
     private void HandleStationInteraction()
     {
         if (!Keyboard.current.eKey.wasPressedThisFrame || holdingObj)
             return;
 
         Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange, ~0, QueryTriggerInteraction.Ignore))
         {
             s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
-            if (station != null)
+            if (station != null && station.isActiveAndEnabled)
                 station.Use(gameObject);
             
             s_MinigameObject obj = hit.collider.GetComponentInParent<s_MinigameObject>();
-            if (obj != null)
+            if (obj != null && obj.isActiveAndEnabled)
                 obj.Use(gameObject);
         }
     }
@@ -70,12 +121,13 @@ public class s_PlayerCamera : MonoBehaviour
         {
             if (!holdingObj)
             {
-                if (Physics.Raycast(ray, out hit, 50))
+                if (Physics.Raycast(ray, out hit, 50, ~0, QueryTriggerInteraction.Ignore))
                 {
-                    if(hit.collider.gameObject.TryGetComponent(out s_Grabbable grabbedObj))
+                    s_Grabbable grabbedObj = hit.collider.GetComponentInParent<s_Grabbable>();
+                    if(grabbedObj && grabbedObj.isActiveAndEnabled)
                     {
                         //Debug.Log("Interacted with: " + hit.collider.gameObject.name);
-                        currentHeldObj = hit.collider.gameObject;
+                        currentHeldObj = grabbedObj.gameObject;
                         grabbedObj.Grab(gameObject);
                         holdingObj = true;
                     }
@@ -85,10 +137,9 @@ public class s_PlayerCamera : MonoBehaviour
             {
                 if (currentHeldObj.GetComponent<s_StickyNoteController>())
                 {
-                    if (Physics.Raycast(ray, out hit, 50))
+                    if (s_InteractionFeedback.TryGetPlacement(ray, currentHeldObj, out Vector3 position, out Quaternion rotation))
                     {
-                        currentHeldObj.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
-                        currentHeldObj.transform.position = hit.point;
+                        currentHeldObj.transform.SetPositionAndRotation(position, rotation);
                         currentHeldObj.GetComponent<s_Grabbable>().Drop(false);
                         //Debug.Log("Sticking to: " + hit.collider.gameObject.name);
                         holdingObj = false;
