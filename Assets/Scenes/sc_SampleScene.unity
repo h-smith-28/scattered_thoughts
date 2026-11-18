@@ -1344,7 +1344,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 08032aa60cd52304ca825b21112fc085, type: 2}
-  - {fileID: -555035645480560591, guid: 40148a4d01445a345a4b6670131261d7, type: 3}
+  - {fileID: 2100000, guid: 80d0206d34efb8e4296416fd3d05083a, type: 2}
   - {fileID: 2100000, guid: 08032aa60cd52304ca825b21112fc085, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624672684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b555e1639e5d3274793da25fc9c594c5, type: 3}
   m_Name: 
@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520094412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b555e1639e5d3274793da25fc9c594c5, type: 3}
   m_Name: 
@@ -4175,6 +4175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::s_PlayerCamera
   cameraSens: 0.2
   interactRange: 4
+  outlineMaterial: {fileID: 2100000, guid: d8c497d4de22ce248930340190363d11, type: 2}
+  placementPreviewMaterial: {fileID: 2100000, guid: 0495a0ce1dacb9f42b138406dc35b3a4, type: 2}
 --- !u!1 &1870597022
 GameObject:
   m_ObjectHideFlags: 0
