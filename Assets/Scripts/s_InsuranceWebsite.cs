@@ -48,11 +48,16 @@ public class s_InsuranceWebsite : MonoBehaviour
         {
             if (typed == answer.Trim().ToLower())
             {
-                FindAnyObjectByType<s_GameMenus>()?.ShowWin();   // temporary end; becomes NextPage() when captcha exists
-                return;
+                NextPage();
             }
         }
         errorMessage.SetActive(true);
+    }
+
+        public void ChoosePlan(int planIndex)
+    {
+        Debug.Log("Chose plan " + planIndex);
+        FindAnyObjectByType<s_GameMenus>()?.ShowWin();
     }
 
     string DigitsOnly(string s)
