@@ -9,6 +9,9 @@ public class s_GameStates : MonoBehaviour
     public Text stressNum;
     public AudioSource heartbeatSFX;
 
+    public float timeMinutes = 1;
+    public float timeHour = 8;
+
     void Start()
     {
         gameMenus = FindAnyObjectByType<s_GameMenus>();
@@ -32,6 +35,15 @@ public class s_GameStates : MonoBehaviour
         {
             heartbeatSFX.Play();
         }
+
+        timeMinutes += Time.deltaTime;
+        if(timeMinutes >= 60)
+        {
+            timeHour++;
+            timeMinutes = 0.0f;
+        }
+        if(timeHour >=13)
+            timeHour = 1;
     }
 
     void EndGameState()

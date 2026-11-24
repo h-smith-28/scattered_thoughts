@@ -4,6 +4,7 @@
 */
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
 
 public class s_PlayerCamera : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class s_PlayerCamera : MonoBehaviour
     [SerializeField] private Material placementPreviewMaterial;
     private s_InteractionFeedback interactionFeedback;
 
+    public bool usingPhone = false;
+    [SerializeField]
+    private GameObject phone;
+
     private void Start()
     {
         mainCamera = GetComponentInChildren<Camera>();
@@ -36,11 +41,26 @@ public class s_PlayerCamera : MonoBehaviour
     {
         if (!mainCamera) InitializeFeedback();
         if (!mainCamera) return;
-        Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-        if(!InputSystem.actions.FindAction("Secondary").IsPressed())
-            HandleCamera(mouseDelta);
-        HandleObjectInteraction(mouseDelta);
-        HandleStationInteraction();
+        if (!usingPhone){
+            Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+            if(!InputSystem.actions.FindAction("Secondary").IsPressed())
+                HandleCamera(mouseDelta);
+            HandleObjectInteraction(mouseDelta);
+            HandleStationInteraction();
+        }
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        {
+            if (!usingPhone)
+            {
+                phone.GetComponent<s_PhoneController>().StartUsing();
+                usingPhone = true;
+            }
+            else
+            {
+                phone.GetComponent<s_PhoneController>().EndUsing();
+                usingPhone = false;
+            }
+        }
     }
 
     private void LateUpdate()
@@ -57,22 +77,23 @@ public class s_PlayerCamera : MonoBehaviour
                 interactionFeedback.DrawFocus(null);
             return;
         }
-
-        Transform target = null;
-        if (Physics.Raycast(ray, out RaycastHit hit, 50f, ~0, QueryTriggerInteraction.Ignore))
-        {
-            s_Grabbable grabbable = hit.collider.GetComponentInParent<s_Grabbable>();
-            s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
-            s_MinigameObject minigame = hit.collider.GetComponentInParent<s_MinigameObject>();
-            if (grabbable && grabbable.isActiveAndEnabled)
-                target = grabbable.transform;
-            else if (hit.distance <= interactRange)
+        if(!usingPhone){
+            Transform target = null;
+            if (Physics.Raycast(ray, out RaycastHit hit, 50f, ~0, QueryTriggerInteraction.Ignore))
             {
-                if (station && station.isActiveAndEnabled && !station.IsBusy) target = station.transform;
-                else if (minigame && minigame.isActiveAndEnabled && !minigame.IsBusy) target = minigame.transform;
+                s_Grabbable grabbable = hit.collider.GetComponentInParent<s_Grabbable>();
+                s_ComputerStation station = hit.collider.GetComponentInParent<s_ComputerStation>();
+                s_MinigameObject minigame = hit.collider.GetComponentInParent<s_MinigameObject>();
+                if (grabbable && grabbable.isActiveAndEnabled)
+                    target = grabbable.transform;
+                else if (hit.distance <= interactRange)
+                {
+                    if (station && station.isActiveAndEnabled && !station.IsBusy) target = station.transform;
+                    else if (minigame && minigame.isActiveAndEnabled && !minigame.IsBusy) target = minigame.transform;
+                }
             }
+            interactionFeedback.DrawFocus(target);
         }
-        interactionFeedback.DrawFocus(target);
     }
 
     private void InitializeFeedback()
