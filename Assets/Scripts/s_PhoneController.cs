@@ -68,7 +68,7 @@ public class s_PhoneController : MonoBehaviour
             mMessage2.SetActive(true);
             gameStatesScript.AdjustStress(20);
         }
-        if(textStage == 5 && responseTimer >= 60)
+        if(textStage == 5 && responseTimer >= 20)
         {
             textStage++;
             waitingForResponse = false;
