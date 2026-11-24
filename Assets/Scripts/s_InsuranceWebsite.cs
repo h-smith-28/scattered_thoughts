@@ -9,6 +9,8 @@ public class s_InsuranceWebsite : MonoBehaviour
     public string password = "SeCr3t_w0rd5!";
     public TMP_InputField ssnInput;
     public string ssn = "123-45-6789";   // must match what Mom texts
+    public TMP_InputField securityInput;
+    public string[] securityAnswers = { "willow" };
 
 
     int currentPage;
@@ -34,9 +36,23 @@ public class s_InsuranceWebsite : MonoBehaviour
         public void SubmitSSN()
     {
         if (DigitsOnly(ssnInput.text) == DigitsOnly(ssn))
-            FindAnyObjectByType<s_GameMenus>()?.ShowWin();
+            NextPage();
         else
             errorMessage.SetActive(true);
+    }
+
+        public void SubmitSecurity()
+    {
+        string typed = securityInput.text.Trim().ToLower();
+        foreach (string answer in securityAnswers)
+        {
+            if (typed == answer.Trim().ToLower())
+            {
+                FindAnyObjectByType<s_GameMenus>()?.ShowWin();   // temporary end; becomes NextPage() when captcha exists
+                return;
+            }
+        }
+        errorMessage.SetActive(true);
     }
 
     string DigitsOnly(string s)
