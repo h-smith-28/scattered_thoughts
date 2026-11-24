@@ -49,6 +49,7 @@ public class s_InsuranceWebsite : MonoBehaviour
             if (typed == answer.Trim().ToLower())
             {
                 NextPage();
+                return;
             }
         }
         errorMessage.SetActive(true);
