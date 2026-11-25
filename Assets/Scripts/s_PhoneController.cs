@@ -12,7 +12,9 @@ public class s_PhoneController : MonoBehaviour
     public Image crosshairRef;
     
 
-    private bool inUse;
+    private bool inUse = false;
+    private bool stressToGain = false;
+    private int stressAmount = 0;
     public Vector3 usingPosition;
     private Vector3 normalPosition = new Vector3(0.35f, -0.2f, 0.35f);
 
@@ -49,6 +51,11 @@ public class s_PhoneController : MonoBehaviour
             responseTimer += Time.deltaTime;
         }
         HandleResponses();
+        if (inUse && stressToGain)
+        {
+            gameStatesScript.AdjustStress(stressAmount);
+            stressToGain = false;
+        }
     }
 
     private void HandleResponses()
@@ -66,7 +73,8 @@ public class s_PhoneController : MonoBehaviour
             waitingForResponse = false;
             responseTimer = 0.0f;
             mMessage2.SetActive(true);
-            gameStatesScript.AdjustStress(20);
+            stressAmount = 30;
+            stressToGain = true;
         }
         if(textStage == 5 && responseTimer >= 20)
         {
@@ -74,7 +82,8 @@ public class s_PhoneController : MonoBehaviour
             waitingForResponse = false;
             responseTimer = 0.0f;
             mMessage3.SetActive(true);
-            gameStatesScript.AdjustStress(30);
+            stressAmount = 30;
+            stressToGain = true;
         }
     }
 
@@ -85,6 +94,7 @@ public class s_PhoneController : MonoBehaviour
         Cursor.visible = true;
         crosshairRef.enabled = false;
         pixelShader.SetVector("_PixelResolution", new Vector2(1600,900));
+        inUse = true;
     }
 
     public void EndUsing()
@@ -94,6 +104,7 @@ public class s_PhoneController : MonoBehaviour
         Cursor.visible = false;
         crosshairRef.enabled = true;
         pixelShader.SetVector("_PixelResolution", new Vector2(800,450));
+        inUse = false;
     }
 
     public void NextTextStage()
