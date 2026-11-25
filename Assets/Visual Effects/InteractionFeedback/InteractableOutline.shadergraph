@@ -727,8 +727,8 @@
     "m_ObjectId": "2605bd96adad4eaf86a925856bbcf11e",
     "m_Title": "3. Choose the sky blue color",
     "m_Position": {
-        "x": 450.0,
-        "y": 650.0
+        "x": 475.0,
+        "y": 691.0
     }
 }
 
@@ -1263,8 +1263,8 @@
     "m_ObjectId": "8b32814cf10344f0938bedbf1805ebd2",
     "m_Title": "1. Find the outward direction in WORLD space",
     "m_Position": {
-        "x": -1250.0,
-        "y": -120.0
+        "x": -1275.0001220703125,
+        "y": -59.0001220703125
     }
 }
 
@@ -1450,8 +1450,8 @@
     "m_ObjectId": "ae6b87c6b0484e999cf8744d9c01dac3",
     "m_Title": "2. Widen the outline and send it to Vertex Position",
     "m_Position": {
-        "x": -450.0,
-        "y": -120.0
+        "x": -525.0000610351563,
+        "y": -59.0001220703125
     }
 }
 
